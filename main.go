@@ -27,17 +27,15 @@ func main() {
 	fmt.Printf("Your final point is : %v", totalPoint);
 }
 
-// function to print some statements
 func gameMassage(){
-	fmt.Println("I am thinking of a number between 1 and 100.")
+	fmt.Println("\nI am thinking of a number between 1 and 100.")
 	fmt.Println("You have to guess the currect number.");
 
 	fmt.Println("Please select the dificulty level:")
-	fmt.Println("1. Easy (10 changes)\n2.Medium (5 changes)\n3.Hard (3 changes)")
+	fmt.Println("1.Easy (10 changes)\n2.Medium (5 changes)\n3.Hard (3 changes)")
 
 }
 
-// to chose dificulty 
 func yourDificulty(num int) int {
 	var choice int
 	fmt.Print("\nEnter your choice: ")
@@ -76,13 +74,14 @@ func yourDificulty(num int) int {
 		fmt.Println("\nYou have earned points.")
 		fmt.Printf("Your point is %v\n\n", point)
 	}else {
-		fmt.Println("\nYou haven't earn any points.")
+		fmt.Println("\nYou Lost...")
+		fmt.Printf("The correct number is : %v\n", num);
+		fmt.Println("You haven't earn any points.")
 		fmt.Println()
 	}
 	return point
 }
 
-//to check and evaluate player's input
 func maingame(num, changes int) (bool, int){
 	youWin := false
 	var guess int
@@ -102,7 +101,6 @@ func maingame(num, changes int) (bool, int){
 		} else {
 			fmt.Printf("Incorrect! The number is greater than %v\n", guess)
 		}
-
 	}
 	return youWin, remainingChanges
 }
